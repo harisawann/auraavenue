@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "https://YOUR-RENDER-URL.onrender.com/api/:path*" },
+    { "source": "/sitemap.xml", "destination": "https://YOUR-RENDER-URL.onrender.com/sitemap.xml" },
+    { "source": "/robots.txt", "destination": "https://YOUR-RENDER-URL.onrender.com/robots.txt" }
+  ]
+}
