@@ -26,6 +26,15 @@ export default function Cart() {
     else toast.error(result.message);
   };
 
+  const handleWhatsAppOrder = () => {
+    const phone = '923255910645';
+    const lines = cart.items.map(function(item) {
+      return '- ' + item.product.name + ' x' + item.quantity + ' = Rs. ' + item.lineTotal.toLocaleString();
+    });
+    const text = 'Hi! I want to place an order:%0A%0A' + lines.join('%0A') + '%0A%0ATotal: Rs. ' + cart.subtotal.toLocaleString() + '%0A%0APlease confirm my order and share payment details.';
+    window.open('https://wa.me/' + phone + '?text=' + text, '_blank', 'noopener,noreferrer');
+  };
+
   if (!loading && cart.items.length === 0) {
     return (
       <div className="min-h-screen bg-paper">
