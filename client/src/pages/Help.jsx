@@ -38,11 +38,12 @@ export default function Help() {
       <main className="max-w-3xl mx-auto px-6 py-16">
 
         <div className="text-center mb-14">
-          <h1 className="font-display text-4xl text-ink mb-3">Help &amp; Support</h1>
+          <h1 className="font-display text-4xl text-ink mb-3">Help and Support</h1>
           <p className="text-ink/60">We are here to help. Reach out anytime.</p>
         </div>
 
         <div className="grid sm:grid-cols-3 gap-4 mb-14">
+
           
             href="https://wa.me/923255910645?text=Hi!%20I%20need%20help%20with%20my%20order%20on%20Aura%20Avenue."
             target="_blank"
