@@ -6,6 +6,7 @@ import { AuthProvider } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
 import { WishlistProvider } from './context/WishlistContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import WhatsAppButton from './components/WhatsAppButton';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -29,25 +30,17 @@ import Orders from './pages/Orders';
 import Wishlist from './pages/Wishlist';
 import PolicyPage from './pages/PolicyPage';
 import Account from './pages/Account';
+import Help from './pages/Help';
 
 function ProductDetailRoute() {
   const { slug } = useParams();
   return <ProductDetail key={slug} />;
 }
 
-// Mounted inside BrowserRouter so it can read location changes; fires a
-// page_view/PageView on every route change once GA/Pixel are initialized.
 function AnalyticsListener() {
   const location = useLocation();
-
-  useEffect(() => {
-    initAnalytics();
-  }, []);
-
-  useEffect(() => {
-    trackPageview(location.pathname + location.search);
-  }, [location.pathname, location.search]);
-
+  useEffect(() => { initAnalytics(); }, []);
+  useEffect(() => { trackPageview(location.pathname + location.search); }, [location.pathname, location.search]);
   return null;
 }
 
@@ -61,13 +54,10 @@ export default function App() {
             <Toaster
               position="top-center"
               toastOptions={{
-                style: {
-                  background: '#1A1A1A',
-                  color: '#FFFFFF',
-                  fontSize: '14px'
-                }
+                style: { background: '#1A1A1A', color: '#FFFFFF', fontSize: '14px' }
               }}
             />
+            <WhatsAppButton />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
@@ -81,6 +71,7 @@ export default function App() {
               <Route path="/orders/:id/confirmation" element={<ProtectedRoute><OrderConfirmation /></ProtectedRoute>} />
               <Route path="/wishlist" element={<ProtectedRoute><Wishlist /></ProtectedRoute>} />
               <Route path="/account" element={<ProtectedRoute><Account /></ProtectedRoute>} />
+              <Route path="/help" element={<Help />} />
               <Route path="/admin" element={<ProtectedRoute adminOnly><AdminDashboard /></ProtectedRoute>} />
               <Route path="/admin/products" element={<ProtectedRoute adminOnly><AdminProducts /></ProtectedRoute>} />
               <Route path="/admin/categories" element={<ProtectedRoute adminOnly><AdminCategories /></ProtectedRoute>} />
