@@ -125,7 +125,7 @@ ${itemLines}
 Total: Rs. ${cart.subtotal.toLocaleString()}
 
 Please confirm my order and share payment details.`;
-              window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
+              window.open('https://wa.me/' + phone + '?text=' + msg, '_blank', 'noopener,noreferrer');
             }}
             className="w-full max-w-xs mt-2 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white py-3 rounded-sm text-sm font-medium transition-colors"
           >
