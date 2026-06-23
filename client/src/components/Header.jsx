@@ -24,6 +24,7 @@ export default function Header() {
       </Link>
 
       <nav className="flex items-center gap-5 text-sm">
+        <Link to="/help" className="text-ink/70 hover:text-ink transition-colors hidden md:inline">Help</Link>
         <Link to="/shop" className="text-ink/70 hover:text-ink transition-colors">
           Shop
         </Link>
