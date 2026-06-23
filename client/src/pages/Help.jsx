@@ -3,14 +3,14 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const faqs = [
-  { q: 'How do I place an order?', a: 'Browse our products, add items to your cart, and proceed to checkout. You\'ll need to enter your shipping address and choose a payment method.' },
+  { q: 'How do I place an order?', a: 'Browse our products, add items to your cart, and proceed to checkout. You will need to enter your shipping address and choose a payment method.' },
   { q: 'What payment methods do you accept?', a: 'We accept JazzCash, Easypaisa, Bank Transfer, and Cash on Delivery. An advance payment of PKR 300 is required for all methods except COD.' },
-  { q: 'How long does delivery take?', a: 'We deliver across Pakistan in 2–5 business days depending on your city. Major cities like Karachi, Lahore, and Islamabad typically receive orders in 2–3 days.' },
+  { q: 'How long does delivery take?', a: 'We deliver across Pakistan in 2-5 business days depending on your city. Major cities like Karachi, Lahore, and Islamabad typically receive orders in 2-3 days.' },
   { q: 'Can I return a product?', a: 'Yes! We offer hassle-free returns within 7 days of delivery. The product must be unused and in its original packaging. Contact us on WhatsApp to initiate a return.' },
-  { q: 'How do I track my order?', a: 'Once your order is shipped, you\'ll receive a notification. You can also check your order status by going to My Account → Orders.' },
+  { q: 'How do I track my order?', a: 'Once your order is shipped, you will receive a notification. You can also check your order status by going to My Account then Orders.' },
   { q: 'What is the advance payment for?', a: 'A small advance payment of PKR 300 helps us confirm serious orders and reduce fake orders. The remaining amount is collected on delivery.' },
   { q: 'My payment was sent but order not confirmed?', a: 'Please send your transaction ID/screenshot to our WhatsApp. Our team manually verifies payments and will confirm your order within a few hours.' },
-  { q: 'Do you deliver outside Pakistan?', a: 'Currently, we only deliver within Pakistan. International shipping is something we\'re working towards.' }
+  { q: 'Do you deliver outside Pakistan?', a: 'Currently, we only deliver within Pakistan. International shipping is something we are working towards.' }
 ];
 
 function FAQItem({ q, a }) {
@@ -37,13 +37,11 @@ export default function Help() {
       <Header />
       <main className="max-w-3xl mx-auto px-6 py-16">
 
-        {/* Hero */}
         <div className="text-center mb-14">
-          <h1 className="font-display text-4xl text-ink mb-3">Help & Support</h1>
-          <p className="text-ink/60">We're here to help. Reach out anytime.</p>
+          <h1 className="font-display text-4xl text-ink mb-3">Help &amp; Support</h1>
+          <p className="text-ink/60">We are here to help. Reach out anytime.</p>
         </div>
 
-        {/* Contact cards */}
         <div className="grid sm:grid-cols-3 gap-4 mb-14">
           
             href="https://wa.me/923255910645?text=Hi!%20I%20need%20help%20with%20my%20order%20on%20Aura%20Avenue."
@@ -57,7 +55,7 @@ export default function Help() {
             <div>
               <p className="font-medium text-ink text-sm">WhatsApp</p>
               <p className="text-xs text-ink/50 mt-0.5">Fastest response</p>
-              <p className="text-xs text-[#25D366] font-medium mt-1">Chat Now →</p>
+              <p className="text-xs text-[#25D366] font-medium mt-1">Chat Now</p>
             </div>
           </a>
 
@@ -71,7 +69,7 @@ export default function Help() {
             <div>
               <p className="font-medium text-ink text-sm">Email</p>
               <p className="text-xs text-ink/50 mt-0.5">auraevenue@gmail.com</p>
-              <p className="text-xs text-gold-dark font-medium mt-1">Send Email →</p>
+              <p className="text-xs text-gold-dark font-medium mt-1">Send Email</p>
             </div>
           </a>
 
@@ -81,13 +79,12 @@ export default function Help() {
             </div>
             <div>
               <p className="font-medium text-ink text-sm">Support Hours</p>
-              <p className="text-xs text-ink/50 mt-0.5">Mon – Sat</p>
-              <p className="text-xs text-ink/70 font-medium mt-1">10:00 AM – 8:00 PM</p>
+              <p className="text-xs text-ink/50 mt-0.5">Mon - Sat</p>
+              <p className="text-xs text-ink/70 font-medium mt-1">10:00 AM - 8:00 PM</p>
             </div>
           </div>
         </div>
 
-        {/* FAQ */}
         <div>
           <h2 className="font-display text-2xl text-ink mb-6">Frequently Asked Questions</h2>
           <div className="bg-white border border-sand-dark rounded-sm px-6">
@@ -97,7 +94,6 @@ export default function Help() {
           </div>
         </div>
 
-        {/* Still need help */}
         <div className="mt-12 text-center p-8 bg-cream border border-sand-dark rounded-sm">
           <p className="font-display text-xl text-ink mb-2">Still need help?</p>
           <p className="text-sm text-ink/60 mb-4">Our team is available on WhatsApp for quick support.</p>
