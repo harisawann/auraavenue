@@ -115,15 +115,42 @@ function HeroBanner() {
   const prev = () => goTo((current - 1 + bannerSlides.length) % bannerSlides.length);
 
   useEffect(() => {
+  let imagesLoaded = 0;
+  const total = bannerSlides.length;
+
+  const startTimer = () => {
+    if (timerRef.current) return; // prevent duplicate timers
     timerRef.current = setInterval(() => {
       setFade(false);
       setTimeout(() => {
         setCurrent((c) => (c + 1) % bannerSlides.length);
         setFade(true);
       }, 300);
-    }, 4000);
-    return () => clearInterval(timerRef.current);
-  }, []);
+    }, 6000);
+  };
+
+  bannerSlides.forEach((slide) => {
+    const img = new Image();
+    img.onload = () => {
+      imagesLoaded++;
+      if (imagesLoaded === total) startTimer();
+    };
+    img.onerror = () => {
+      imagesLoaded++;
+      if (imagesLoaded === total) startTimer(); // start even if an image fails
+    };
+    if (img.complete) {
+      // already cached
+      imagesLoaded++;
+      if (imagesLoaded === total) startTimer();
+    } else {
+      img.src = slide.src;
+    }
+    img.src = slide.image;
+  });
+
+  return () => clearInterval(timerRef.current);
+}, []);
 
   return (
     <div>
