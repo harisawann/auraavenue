@@ -45,8 +45,8 @@ export default function Help() {
 
         {/* Contact cards */}
         <div className="grid sm:grid-cols-3 gap-4 mb-14">
-          <a
-            href="https://wa.me/923001234567?text=Hi!%20I%20need%20help%20with%20my%20order%20on%20Aura%20Avenue."
+          
+            href="https://wa.me/923255910645?text=Hi!%20I%20need%20help%20with%20my%20order%20on%20Aura%20Avenue."
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col items-center text-center gap-3 p-6 rounded-sm border border-sand-dark hover:border-[#25D366] hover:bg-[#25D366]/5 transition-all group"
@@ -61,8 +61,8 @@ export default function Help() {
             </div>
           </a>
 
-          <a
-            href="mailto:support@auraavenue.pk"
+          
+            href="mailto:auraevenue@gmail.com"
             className="flex flex-col items-center text-center gap-3 p-6 rounded-sm border border-sand-dark hover:border-gold transition-all group"
           >
             <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
@@ -70,7 +70,7 @@ export default function Help() {
             </div>
             <div>
               <p className="font-medium text-ink text-sm">Email</p>
-              <p className="text-xs text-ink/50 mt-0.5">support@auraavenue.pk</p>
+              <p className="text-xs text-ink/50 mt-0.5">auraevenue@gmail.com</p>
               <p className="text-xs text-gold-dark font-medium mt-1">Send Email →</p>
             </div>
           </a>
@@ -101,8 +101,8 @@ export default function Help() {
         <div className="mt-12 text-center p-8 bg-cream border border-sand-dark rounded-sm">
           <p className="font-display text-xl text-ink mb-2">Still need help?</p>
           <p className="text-sm text-ink/60 mb-4">Our team is available on WhatsApp for quick support.</p>
-          <a
-            href="https://wa.me/923001234567"
+          
+            href="https://wa.me/923255910645"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[#25D366] text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-[#1ebe5d] transition-colors"
