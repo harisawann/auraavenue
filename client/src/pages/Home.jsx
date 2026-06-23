@@ -83,14 +83,14 @@ const bannerSlides = [
     ctaUrl: '/shop'
   },
   {
-    image: '/banner.jpeg',
+    image: '/banner2.jpeg',
     title: 'Enter a Better Lifestyle',
     subtitle: 'Upgrade your kitchen with Aura Avenue collections.',
     cta: 'Explore',
     ctaUrl: '/shop'
   },
   {
-    image: '/banner.jpeg',
+    image: '/banner3.jpeg',
     title: 'Free Delivery Across Pakistan',
     subtitle: 'On orders above PKR 5,000. COD available everywhere.',
     cta: 'Start Shopping',
@@ -98,7 +98,7 @@ const bannerSlides = [
   }
 ];
 
-function HeroBanner({ hero }) {
+function HeroBanner() {
   const [current, setCurrent] = useState(0);
   const [fade, setFade] = useState(true);
   const timerRef = useRef(null);
@@ -125,73 +125,64 @@ function HeroBanner({ hero }) {
     return () => clearInterval(timerRef.current);
   }, []);
 
-  const slide = bannerSlides[current];
-  const title = current === 0 ? (hero?.title || slide.title) : slide.title;
-  const subtitle = current === 0 ? (hero?.subtitle || slide.subtitle) : slide.subtitle;
-
   return (
-    <section className="relative overflow-hidden bg-cream">
-      {/* Image */}
-      <div
-        style={{
-          opacity: fade ? 1 : 0,
-          transition: 'opacity 0.3s ease'
-        }}
-      >
-        <img
-          src={slide.image}
-          alt={title}
-          className="w-full object-cover max-h-[520px]"
-        />
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-black/30" />
-      </div>
+    <div>
+      {/* Slider - image only, no text overlay */}
+      <section className="relative overflow-hidden bg-cream">
+        <div style={{ opacity: fade ? 1 : 0, transition: 'opacity 0.3s ease' }}>
+          <img
+  key={bannerSlides[current].image}
+  src={bannerSlides[current].image}
+  alt={`Banner ${current + 1}`}
+  className="w-full object-cover max-h-[520px]"
+/>
+        </div>
 
-      {/* Text overlay */}
-      <div
-        className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center"
-        style={{ opacity: fade ? 1 : 0, transition: 'opacity 0.3s ease 0.1s' }}
-      >
+        {/* Prev Button */}
+        <button
+          onClick={prev}
+          className="absolute left-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center text-white transition-colors"
+          aria-label="Previous slide"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+
+        {/* Next Button */}
+        <button
+          onClick={next}
+          className="absolute right-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center text-white transition-colors"
+          aria-label="Next slide"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+
+        {/* Dots */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+          {bannerSlides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => goTo(i)}
+              className={`h-2 rounded-full transition-all duration-200 ${i === current ? 'bg-white w-5' : 'bg-white/50 w-2'}`}
+              aria-label={`Go to slide ${i + 1}`}
+            />
+          ))}
+        </div>
+      </section>
+
+      {/* Static text below banner */}
+      <div className="bg-cream px-6 py-10 flex flex-col items-center text-center">
         <p className="text-xs uppercase tracking-widest text-gold font-medium mb-2">Aura Avenue</p>
-        <h1 className="font-display text-3xl md:text-5xl text-white mb-4 drop-shadow-md">{title}</h1>
-        <p className="text-white/80 max-w-md mx-auto mb-6 text-sm">{subtitle}</p>
-        <Link to={hero?.ctaUrl || slide.ctaUrl}>
-          <Button variant="gold">{hero?.ctaText || slide.cta}</Button>
+        <h1 className="font-display text-3xl md:text-5xl text-ink mb-4">Premium Kitchen Essentials</h1>
+        <p className="text-ink/60 max-w-md mx-auto mb-6 text-sm">Thoughtfully designed kitchen accessories, made to last.</p>
+        <Link to="/shop">
+          <Button variant="gold">Shop Now</Button>
         </Link>
       </div>
-
-      {/* Prev / Next arrows */}
-      <button
-        onClick={prev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center text-white transition-colors"
-        aria-label="Previous slide"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="15 18 9 12 15 6"/>
-        </svg>
-      </button>
-      <button
-        onClick={next}
-        className="absolute right-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center text-white transition-colors"
-        aria-label="Next slide"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-      </button>
-
-      {/* Dots */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-        {bannerSlides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => goTo(i)}
-            className={`w-2 h-2 rounded-full transition-all duration-200 ${i === current ? 'bg-white w-5' : 'bg-white/50'}`}
-            aria-label={`Go to slide ${i + 1}`}
-          />
-        ))}
-      </div>
-    </section>
+    </div>
   );
 }
 
@@ -200,7 +191,7 @@ export default function Home() {
     description: 'Shop premium kitchen accessories and homeware at Aura Avenue. COD, JazzCash & Easypaisa accepted, delivered across Pakistan.'
   });
 
-  const [hero, setHero] = useState(null);
+
   const [productsLoading, setProductsLoading] = useState(true);
   const [featured, setFeatured] = useState([]);
   const [newArrivals, setNewArrivals] = useState([]);
@@ -219,8 +210,7 @@ export default function Home() {
       productService.getBestSellers(8).catch(() => ({ products: [] })),
       faqService.getFAQs().catch(() => ({ faqs: [] }))
     ]).then(([sectionsData, featuredData, newArrivalsData, bestSellersData, faqData]) => {
-      if (cancelled) return;
-      setHero(sectionsData.sections.find((s) => s.key === 'hero') || null);
+      if (cancelled) return;      
       setProductsLoading(false);
       setFeatured(featuredData.products);
       setNewArrivals(newArrivalsData.products);
@@ -259,7 +249,7 @@ export default function Home() {
       <Header />
 
       {/* Hero Banner Slider */}
-      <HeroBanner hero={hero} />
+      <HeroBanner />
 
       <AnimatedSection delay={0.05}>
         <TrustBadges />
