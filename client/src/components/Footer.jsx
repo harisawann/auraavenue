@@ -8,7 +8,7 @@ export default function Footer() {
         {/* Logo + tagline */}
         <div className="col-span-2 md:col-span-1">
           <div className="mb-4">
-            <img src="/logo.jpeg" alt="Aura Avenue" className="h-12 w-auto object-contain brightness-0 invert" />
+            <img src="/logo.jpeg" alt="Aura Avenue" className="h-12 w-auto object-contain opacity-90" />
           </div>
           <p className="text-sm text-paper/50 leading-relaxed">Premium kitchen accessories, delivered across Pakistan.</p>
           <a
