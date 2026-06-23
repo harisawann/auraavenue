@@ -49,7 +49,7 @@ export default function HeroSlider() {
         <div style={{ opacity: fade ? 1 : 0, transition: 'opacity 0.3s ease' }}>
           <img
             src={bannerSlides[current].image}
-            alt="Banner"
+            alt={`Banner ${current + 1}`}
             className="w-full object-cover max-h-[520px]"
           />
         </div>
