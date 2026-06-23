@@ -4,30 +4,17 @@ import { Link } from 'react-router-dom';
 const DEFAULT_SLIDES = [
   {
     id: 1,
-    image: '/banner.jpeg',
-    tag: 'New Collection',
-    title: 'Premium Kitchen Essentials',
-    subtitle: 'Thoughtfully designed accessories for modern homes — shipped across Pakistan.',
-    cta: { label: 'Shop Now', href: '/shop' },
-    overlay: 'from-ink/60 to-ink/10'
+    image: '/banner.jpeg',    
   },
   {
     id: 2,
     image: '/banner2.jpeg',
-    tag: 'Best Sellers',
-    title: 'Loved by Thousands',
-    subtitle: 'Our most-reviewed products — trusted by homes all over Pakistan.',
-    cta: { label: 'Shop Best Sellers', href: '/shop?sort=-ratingsAverage' },
-    overlay: 'from-ink/70 via-ink/30 to-transparent'
+
   },
   {
     id: 3,
     image: '/banner3.jpeg',
-    tag: 'New Arrivals',
-    title: 'Fresh Drops This Week',
-    subtitle: 'Be the first to get the newest additions to the Aura Avenue collection.',
-    cta: { label: 'Explore New Arrivals', href: '/shop?sort=-createdAt' },
-    overlay: 'from-ink/55 to-ink/5'
+   
   }
 ];
 
