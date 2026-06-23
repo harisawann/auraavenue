@@ -1,6 +1,6 @@
 // Floating WhatsApp support button — shows on all pages
 export default function WhatsAppButton() {
-  const phone = '923001234567'; // Replace with your actual WhatsApp number
+  const phone = '923255910645'; // Replace with your actual WhatsApp number
   const message = encodeURIComponent('Hi! I need help with my order on Aura Avenue.');
   const url = `https://wa.me/${phone}?text=${message}`;
 
